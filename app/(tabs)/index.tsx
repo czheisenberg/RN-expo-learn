@@ -14,6 +14,7 @@ import { GestureHandlerRootView } from 'react-native-gesture-handler';
 import * as MediaLibrary from 'expo-media-library';
 import { captureRef } from "react-native-view-shot";
 import domtoimage from 'dom-to-image';
+import { StatusBar } from "expo-status-bar";
 
 const PlaceholderImage = require('@/assets/images/background-image.png');
 
@@ -92,7 +93,8 @@ export default function Index() {
     }
   };
   return (
-    <GestureHandlerRootView
+    <>
+      <GestureHandlerRootView
       style={styles.container}
     >
       <View style={styles.imageContainer}>
@@ -119,6 +121,8 @@ export default function Index() {
         <EmojiList onSelect={setPickedEmoji} onCloseModal={onModalClose} />
       </EmojiPicker>
     </GestureHandlerRootView>
+    <StatusBar style="light" />
+    </>
   );
 }
 
